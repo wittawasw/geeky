@@ -1,5 +1,11 @@
 @import "posts/post";
+@import "bootstrap";
+@import "fonts/fonts";
 
- h1 {
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+h1 {
   color: red;
- }
+}

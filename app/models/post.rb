@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :writer, optional: true
+  belongs_to :writer, optional: true, counter_cache: true
   # , counter_cache: true
 
   # aggregation
@@ -29,7 +29,7 @@ class Post < ApplicationRecord
   # after_create
   # after_save
 
-  after_save :update_counter_cache
+  # after_save :update_counter_cache
 
   # before_destroy :remove_tags
 

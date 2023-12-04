@@ -1,0 +1,16 @@
+<turbo-stream action="replace" target="created_post">
+  <template>
+    <div id="created_post"></div>
+    <%= render partial: 'posts/post', locals: { post: @post } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="post-notice">
+  <template>
+    <div id="post-notice"  data-controller="post-notice">
+      Post was successfully created.
+      <a data-action="click->post-notice#close">close</a>
+    </div>
+  </template>
+</turbo-stream>
+

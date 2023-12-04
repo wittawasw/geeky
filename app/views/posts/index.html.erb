@@ -1,20 +1,20 @@
-<%content_for :test do %>
-  <h1>TEST</h1>
-<% end %>
-
 <p style="color: green"><%= notice %></p>
 
 <h1>Posts</h1>
 
+<%= turbo_frame_tag 'new_post', src: new_post_path, loading: "lazy" do %>
+<% end %>
+
+<h4 id="post-notice"></h4>
+
 <div id="posts">
+  <%= paginate @posts %>
+
+  <div id="created_post">
+  </div>
+
   <% @posts.each do |post| %>
     <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
   <% end %>
+  <%= paginate @posts %>
 </div>
-
-<%= link_to "New post", new_post_path %>
-
-<div id="chart1"></div>

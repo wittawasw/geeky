@@ -2,14 +2,11 @@
   <h3>
     <%= link_to post.title, post %> by  <%= post.display_writer %>
   </h3>
-
   <p>
     <%= strip_and_truncate_content(post.body) %>
   </p>
-
   <p>
     <strong>Tags:</strong>
     <%= post.tags_string %>
   </p>
-
 </div>

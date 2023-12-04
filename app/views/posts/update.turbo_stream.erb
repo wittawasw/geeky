@@ -1,0 +1,12 @@
+<turbo-stream action="replace" target="post_<%= @post.id %>">
+  <template>
+    <%= render partial: 'posts/post', locals: { post: @post } %>
+
+    <div>
+      <%= link_to "Edit", edit_post_path(@post), data: { turbo_frame: "post_#{@post.id}" }, class: "button" %> |
+      <%= link_to "Back", :back %>
+
+      <%= button_to "Destroy this post", @post, method: :delete %>
+    </div>
+  </template>
+</turbo-stream>

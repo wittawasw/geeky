@@ -1,14 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  NUMBER_PER_PAGE = 5.freeze
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all # user.posts
+    session[:user_id] ||= rand(10000)
+    @posts = Post.eager_load(:writer, :tags)
+                 .order(created_at: :desc)
+                 .page(params[:page])
+                 .per(NUMBER_PER_PAGE)
   end
 
   # GET /posts/1 or /posts/1.json
   def show
     # @post
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # GET /posts/new
@@ -18,6 +27,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # POST /posts or /posts.json
@@ -26,9 +39,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        format.turbo_stream
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
+        format.turbo_stream
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -39,9 +54,11 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        format.turbo_stream
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
+        format.turbo_stream
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
