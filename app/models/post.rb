@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   # Post.where(writer_id: nil).map(&:id)
 
 
-  has_many :post_tags
+  has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
 
   # Post.no_writer
@@ -31,7 +31,22 @@ class Post < ApplicationRecord
 
   after_save :update_counter_cache
 
+  # before_destroy :remove_tags
+
+  # def remove_tags
+  #   PostTag.where(post_id: id).destroy_all
+
+  #   tag_ids = PostTag.group(:tag_id)
+  #                    .count
+  #                    .select { |k, v| v <= 1}
+  #                    .keys
+
+  #   PostTag.where(tag_id: tag_ids).destroy_all
+  # end
+
   def update_counter_cache
+    return if writer.nil?
+
     writer.posts_count = writer.posts.count
     writer.save
   end
@@ -43,9 +58,20 @@ class Post < ApplicationRecord
   end
 
   def tags_string=(value)
-    # "tag1, tag2, tag3"
-    value.split(",").each do |tag_string|
-      self.tags.find_or_initialize_by(name: tag_string.strip.downcase)
+    # uniq words
+    words = value.split(",")
+                 .map { |w| w.strip.downcase }
+                 .uniq
+
+    # remove tags
+    existing_names     = tags.pluck(:name)
+    tobe_removed_names = existing_names - words
+    Tag.where(name: tobe_removed_names).destroy_all
+
+    # add tags
+    tobe_added = words - existing_names
+    tobe_added.each do |word|
+      self.tags << Tag.find_or_initialize_by(name: word)
     end
   end
 

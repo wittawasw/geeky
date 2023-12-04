@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts
+
+  namespace :admin do
+    resources :posts
+  end
   # RESTful 7 methods
 end
