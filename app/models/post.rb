@@ -47,8 +47,7 @@ class Post < ApplicationRecord
   def update_counter_cache
     return if writer.nil?
 
-    writer.posts_count = writer.posts.count
-    writer.save
+    UpdatePostsCountJob.perform_later(writer_id: writer.id)
   end
 
   def display_writer
