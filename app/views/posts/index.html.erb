@@ -4,7 +4,8 @@
 
 <%= turbo_frame_tag 'new_post', src: new_post_path, loading: :lazy do%>
 <% end %>
-<div id="post_notice"></div>
+<div id="post_notice" data-controller="post-notice"></div>
+<div id="post_celebrate"></div>
 
 <div>
   <%= paginate @posts, views_prefix: :posts %>

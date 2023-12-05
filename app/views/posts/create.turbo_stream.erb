@@ -1,6 +1,14 @@
 <turbo-stream action="replace" target="post_notice">
   <template>
-    <p id="post_notice" class="notice">Post is successfully created.</p>
+    <p id="post_notice" class="notice"  data-controller="post-notice">
+      Post is successfully created.
+      <a class="button" data-action="click->post-notice#close">close</a>
+    </p>
   </template>
-<turbo-stream>
+</turbo-stream>
 
+<turbo-stream action="replace" target="post_celebrate">
+  <template>
+    <p id="post_celebrate" class="notice">YES !!!!</p>
+  </template>
+</turbo-stream>
