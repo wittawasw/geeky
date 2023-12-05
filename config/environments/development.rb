@@ -33,6 +33,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.session_store :cookie_store,
+    url: 'redis://localhost:6379',
+    expire_after: 30.days,
+    key: '_TOMATO_SESSION'
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 

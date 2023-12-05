@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Posts</h1>
-
+<h3><%= session[:random_number] %></h3>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
