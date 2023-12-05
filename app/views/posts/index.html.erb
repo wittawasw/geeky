@@ -14,7 +14,10 @@
   </div>
 
   <% @posts.each do |post| %>
-    <%= render post %>
+    <% cache post do %>
+      <%= render post %>
+    <% end %>
   <% end %>
+
   <%= paginate @posts %>
 </div>

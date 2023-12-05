@@ -25,12 +25,12 @@ Rails.application.configure do
 
     # config.cache_store = :memory_store
     config.cache_store = :redis_cache_store, {
-    url: 'redis://localhost:6379',
-    pool: {
-      size: 50,
-      timeout: 5
+      url: 'redis://localhost:6379',
+      pool: {
+        size: 50,
+        timeout: 5
+      }
     }
-  }
 
     config.public_file_server.headers = {
       "Cache-Control" => "public, max-age=#{2.days.to_i}"

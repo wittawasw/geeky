@@ -14,10 +14,6 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     # @post
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
   end
 
   # GET /posts/new
@@ -27,10 +23,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
   end
 
   # POST /posts or /posts.json
