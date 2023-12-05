@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :writer, optional: true
+  belongs_to :writer, optional: true, touch: true
+  # Russian Doll Caching
   # , counter_cache: true
 
   # aggregation

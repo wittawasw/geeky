@@ -12,9 +12,7 @@
 </div>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
+  <%= render partial: 'posts/post', collection: @posts, cached: true %>
 </div>
 
 

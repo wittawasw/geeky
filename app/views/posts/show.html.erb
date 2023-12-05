@@ -5,7 +5,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= turbo_frame_tag @post do %>
-  <%= render @post %>
+  <% cache @post do%>
+    <%= render @post %>
+  <% end %>
 
   <div>
     <%= link_to "Edit this post", edit_post_path(@post), data: {turbo_frame: "post_#{@post.id}"} %> |
