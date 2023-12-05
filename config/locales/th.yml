@@ -1,0 +1,4 @@
+th:
+  views:
+    pagination:
+      next: "ถัดไป"

@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  NUMBER_PER_PAGE = 5.freeze
+
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all # user.posts
+    @posts = Post.eager_load(:writer, :tags)
+                 .order(created_at: :desc)
+                 .page(params[:page])
+                 .per(NUMBER_PER_PAGE)
   end
 
   # GET /posts/1 or /posts/1.json

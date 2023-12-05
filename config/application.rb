@@ -22,6 +22,8 @@ module Geeky
     # in config/environments, which are processed later.
     #
     config.time_zone = "Asia/Bangkok"
+    config.available_locales = [:th, :en]
+    config.default_locale = :th
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
