@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   # Russian Doll Caching
   # , counter_cache: true
 
+  has_one_attached :cover
+
   # aggregation
   # Post.joins(:write).group("writer.name")
 
@@ -50,7 +52,7 @@ class Post < ApplicationRecord
 
     UpdatePostsCountJob.perform_later(writer_id: writer.id)
     UpdatePostsCountJob.set(wait_until: Date.tomorrow.noon)
-                       .perform_later(writer_id: writer.id)
+                       .perform_later(writer_id: 1)
   end
 
   def display_writer

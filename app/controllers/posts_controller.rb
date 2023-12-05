@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
+  include ActiveStorage::SetCurrent
   before_action :set_post, only: %i[ show edit update destroy ]
   NUMBER_PER_PAGE = 5.freeze
-
 
   # GET /posts or /posts.json
   def index
@@ -72,6 +72,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :tags_string)
+      params.require(:post).permit(:title, :body, :tags_string, :writer_id, :cover)
     end
 end
