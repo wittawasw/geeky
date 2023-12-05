@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: A Book of Secret
   body: MyText
 
 two:
   title: MyString
   body: MyText
+
+<% 5.times do |i| %>
+post_<%= i%>:
+  title: <%= Faker::Movies::StarWars.character %>
+  body: <%= Faker::Movies::StarWars.quote %>
+<% end %>
