@@ -1,5 +1,11 @@
+@import "fonts/roboto";
 @import "posts/post";
 
- h1 {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
   color: red;
- }
+}
+

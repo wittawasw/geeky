@@ -1,19 +1,14 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>My Title:</strong>
-    <%= post.title %>
-  </p>
+<div class="notice" id="<%= dom_id post %>">
+  <h3>
+    <a href="<%= post_path(post) %>"><%= post.title %></a>
+  </h3>
 
   <p>
     <strong>Body:</strong>
     <%= post.body %>
   </p>
 
-  <p>
-    <strong>Tags:</strong>
-    <%= post.tags_string %>
-  </p>
-
+  <%= tag_pills(post.tags_string) %>
 
   <p>
     <strong>Writer:</strong>
