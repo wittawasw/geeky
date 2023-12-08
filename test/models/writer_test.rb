@@ -27,4 +27,10 @@ class WriterTest < ActiveSupport::TestCase
 
     assert_equal Writer.select_lists, list
   end
+
+  def test_uniqe_name
+    writer = Writer.new(name: "John")
+
+    assert_equal writer.valid?, false
+  end
 end

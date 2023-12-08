@@ -1,0 +1,4 @@
+id, title, body
+<% @posts.each do |post| %>
+<%= "#{post.id}, #{post.title}, #{post.body}" %>
+<% end %>

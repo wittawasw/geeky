@@ -1,5 +1,5 @@
 class Writer < ApplicationRecord
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   class << self
     # Writer.select_lists
@@ -9,4 +9,6 @@ class Writer < ApplicationRecord
       end
     end
   end
+
+  validates :name, uniqueness: true
 end
