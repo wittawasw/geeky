@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :posts
+  # RESTful
+  # - list(index), show, new, edit, create, update, delete
 end
