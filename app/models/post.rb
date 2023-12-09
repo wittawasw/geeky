@@ -9,6 +9,35 @@ class Post < ApplicationRecord
   def writer_name
     writer.name
   end
+
+  def tags_string
+    tags.pluck(:name)
+        .join(', ')
+  end
+
+  def tags_string=(value)
+    # value = "game, Movie"
+    words = value.split(',')
+                 .map {|s| s.strip.downcase}
+
+    tags.delete_all
+
+    # ['game', 'movie']
+    # existing_tags = tags.pluck(:name)
+    # words = words - existing_tags # []
+
+    # ['game', 'movie']
+    words.each do |word|
+      tag = Tag.find_or_create_by(name: word)
+
+      tags << tag
+    end
+  end
+
+  # Post.joins(:writer).where('writers.id' => 2)
+  # Post.joins(:writer).group('writers.id')
+  # Post.joins(:tags).group('tags.name')
+  # Post.joins(:tags).group('tags.name').count
 end
 
 
