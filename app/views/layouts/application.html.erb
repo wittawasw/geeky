@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geeky</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= yield :meta %>
 
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
