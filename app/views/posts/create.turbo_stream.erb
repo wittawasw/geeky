@@ -1,0 +1,23 @@
+<turbo-stream action="replace" target="new_post">
+  <template>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="post_notice">
+  <template>
+    <div id="post_notice"></div>
+    <p class="notice"  data-controller="post-notice">
+      Post <b><%= @post.id %></b> is successfully created.
+      <a class="button" data-action="click->post-notice#close">close</a>
+    </p>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="prepend" target="posts_table">
+  <template>
+    <%= turbo_frame_tag "edit_post_#{@post.id}" do %>
+    <% end %>
+
+    <%= render 'posts/post_card', post: @post %>
+  </template>
+</turbo-stream>

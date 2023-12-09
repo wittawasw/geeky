@@ -5,3 +5,18 @@
   width: 500px;
   height: 500px;
 }
+
+.notice {
+  .time{
+    color: gray;
+    font-size: 10px;
+  }
+
+  .actions {
+    text-align: right;
+
+    a, form {
+      display: inline-block;
+    }
+  }
+}

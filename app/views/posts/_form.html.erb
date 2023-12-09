@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_area :title %>
   </div>
 
   <div>
@@ -33,5 +33,6 @@
 
   <div>
     <%= form.submit %>
+    <%= link_to "cancel", :back %>
   </div>
 <% end %>

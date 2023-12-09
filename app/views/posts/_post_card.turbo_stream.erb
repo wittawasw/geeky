@@ -1,0 +1,12 @@
+<div class="notice" id="updated_post_<%= post.id %>">
+  <%= link_to post.title, post %>
+  <div>
+    <%= post.body %>
+  </div>
+  <div class="time"><%= post.created_at %></div>
+  <div class="actions">
+    <%= link_to "Edit", edit_post_path(post), class: 'button', data: { turbo_frame: "edit_post_#{post.id}" } %>
+    <%= button_to "Destroy", post, method: :delete, data: {turbo_confirm: 'sure'} %>
+  </div>
+</div>
+<div id="edit_post_notice_<%= post.id %>"></div>

@@ -1,0 +1,14 @@
+<turbo-stream action="replace" target="edit_post_notice_<%= @post.id %>">
+  <template>
+    <div id="edit_post_notice_<%= @post.id %>"></div>
+    <p class="notice"  data-controller="post-notice">
+      Post <b><%= @post.id %></b> is successfully destroy.
+      <a class="button" data-action="click->post-notice#close">close</a>
+    </p>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="updated_post_<%= @post.id %>">
+  <template>
+  </template>
+</turbo-stream>
