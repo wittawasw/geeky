@@ -1,10 +1,34 @@
 class Post < ApplicationRecord
   include ContentEditable
 
-  belongs_to :writer
+  # counter_cache column: :posts_count
+  # usage:
+  # reset_counter: Writer.reset_counters(id, :posts_count)
+  belongs_to :writer, counter_cache: :posts_count
+  # posts_count
+  # bundle exec rails g migration AddPostsCountToWriters posts_count:integer
+  # Writer.reset_counters(id, :posts_count)
 
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
+
+  # after_initialize :assign_default_title
+
+  # def assign_default_title
+  #   self.title = 'untitled'
+  # end
+  # before_save
+  # before_create
+  # before_update
+  # after_save
+  # after_create
+  # after_update
+
+  # before_save :prepend_title
+
+  # def prepend_title
+  #   self.title = "Saved: #{title}"
+  # end
 
   def writer_name
     writer.name

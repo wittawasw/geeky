@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = Post.new(title: 'untitled from controllers')
   end
 
   # GET /posts/1/edit
@@ -61,6 +61,8 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to '/404.html'
     end
 
     # Only allow a list of trusted parameters through.
