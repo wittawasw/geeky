@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :skip_cookies, if: :not_signed_in?
+  # before_action :skip_cookies, if: :not_signed_in?
 
   NUMBER_PER_PAGE = 5
 
