@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to post.title, post %></td>
+  <td><%= post.body %></td>
+  <td><%= post.created_at %></td>
+  <td>
+    <%= button_to "Destroy", @post, method: :delete %>
+  </td>
+</tr>

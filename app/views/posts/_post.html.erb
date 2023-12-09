@@ -1,7 +1,7 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
+  <h3><%= post.title %></h3>
+  <p class="timestamp">
+    created: <%= time_ago_in_words(post.created_at) %>
   </p>
 
   <p>
@@ -18,5 +18,4 @@
     <strong>Writer:</strong>
     <%= post.writer_name %>
   </p>
-
 </div>

@@ -2,13 +2,26 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
 <%= link_to "New post", new_post_path %>
+<%= paginate @posts, views_prefix: :posts %>
+
+<%= form_with url: "/posts", method: :get do |form| %>
+  <%= form.text_field :q, value: params[:q] %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<div id="posts">
+  <table>
+    <thead>
+      <th>title</th>
+      <th>body</th>
+      <th>created_at</th>
+      <th>actions</th>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <%= render 'posts/post_row', post: post %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -2,9 +2,15 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_meta, only: %i[ show ]
 
+  # NUMBER_PER_PAGE = 5
+
   # GET /posts or /posts.json
   def index
-    @posts = Post.eager_load(:writer, :tags).all
+    @posts = Post.eager_load(:writer, :tags)
+                 .where("title LIKE '%#{params[:q]}%'") # temporary
+                 .order(created_at: :desc)
+                 .page(params[:page])
+                 .per(NUMBER_PER_PAGE)
   end
 
   # GET /posts/1 or /posts/1.json
