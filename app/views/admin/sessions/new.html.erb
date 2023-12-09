@@ -1,0 +1,5 @@
+<%= form_with url: "/admin/sessions", method: :post do |form| %>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
+  <%= form.submit "Login" %>
+<% end %>

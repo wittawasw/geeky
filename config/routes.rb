@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   # RESTful
   # - list(index), show, new, edit, create, update, delete
 
+  namespace :admin do
+    resources :sessions, only: [:new, :create, :destroy]
+    # login screen, POST to create session
+    resources :samples, only: [:index]
+  end
+
   root "posts#index"
 end
