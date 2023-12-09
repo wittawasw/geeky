@@ -1,6 +1,10 @@
 class Writer < ApplicationRecord
   has_many :posts, dependent: :destroy
 
+  validates :name, uniqueness: true
+  # def valid? -> errors.empty?
+  # add -> error -> errors
+
   class << self
     # Writer.select_lists
     def select_lists
@@ -9,6 +13,4 @@ class Writer < ApplicationRecord
       end
     end
   end
-
-  validates :name, uniqueness: true
 end
