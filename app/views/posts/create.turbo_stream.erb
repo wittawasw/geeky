@@ -5,6 +5,16 @@
   </template>
 </turbo-stream>
 
+<turbo-stream action="replace" target="post-notice">
+  <template>
+    <div id="post-notice"></div>
+    <p class="notice" data-controller="post-notice">
+      Post <%= @post.id %> is successfully created.
+      <a data-action="click->post-notice#close">close</a>
+    </p>
+  </template>
+</turbo-stream>
+
 <turbo-stream action="prepend" target="posts">
   <template>
     <%= render 'posts/post_card', post: @post %>

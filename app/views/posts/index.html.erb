@@ -7,6 +7,8 @@
 <%= turbo_frame_tag 'new_post' do %>
 <% end %>
 
+<div id="post-notice"></div>
+
 <%= paginate @posts, views_prefix: :posts %>
 
 <div id="posts">
