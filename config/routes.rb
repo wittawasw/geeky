@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  resources :posts
+  # /th|en/
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :posts
+  end
+
   # RESTful
   # - list(index), show, new, edit, create, update, delete
 

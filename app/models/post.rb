@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   # counter_cache column: :posts_count
   # usage:
   # reset_counter: Writer.reset_counters(id, :posts_count)
-  belongs_to :writer, counter_cache: :posts_count
+  belongs_to :writer, counter_cache: :posts_count, touch: true
   # posts_count
   # bundle exec rails g migration AddPostsCountToWriters posts_count:integer
   # Writer.reset_counters(id, :posts_count)
@@ -29,16 +29,16 @@ class Post < ApplicationRecord
   # def prepend_title
   #   self.title = "Saved: #{title}"
   # end
-  after_create_commit :broadcast_prepend_to_posts
+  # after_create_commit :broadcast_prepend_to_posts
 
-  def broadcast_prepend_to_posts
-    broadcast_prepend_to(
-      "posts_list",
-      partial: "posts/post_card",
-      locals: { post: self },
-      target: "posts"
-    )
-  end
+  # def broadcast_prepend_to_posts
+  #   broadcast_prepend_to(
+  #     "posts_list",
+  #     partial: "posts/post_card",
+  #     locals: { post: self },
+  #     target: "posts"
+  #   )
+  # end
 
   def writer_name
     writer.name

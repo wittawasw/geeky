@@ -1,0 +1,8 @@
+th:
+  post:
+    title: ชื่อโพส
+    body: เนื้อหา
+    created_at: สร้างเมื่อ
+    tags: แท็ก
+    writer: ผู้เขียน
+  destroy: ลบ

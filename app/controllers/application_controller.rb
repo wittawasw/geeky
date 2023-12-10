@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # before_action :skip_cookies, if: :not_signed_in?
   # before_action :sleep3
+  before_action :set_locale
 
   NUMBER_PER_PAGE = 5
 
@@ -14,5 +15,10 @@ class ApplicationController < ActionController::Base
 
   def sleep3
     sleep 3
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || :th
+    # I18n.locale = session[:locale] || :th
   end
 end
