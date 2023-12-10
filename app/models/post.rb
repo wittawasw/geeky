@@ -29,6 +29,16 @@ class Post < ApplicationRecord
   # def prepend_title
   #   self.title = "Saved: #{title}"
   # end
+  after_create_commit :broadcast_prepend_to_posts
+
+  def broadcast_prepend_to_posts
+    broadcast_prepend_to(
+      "posts_list",
+      partial: "posts/post_card",
+      locals: { post: self },
+      target: "posts"
+    )
+  end
 
   def writer_name
     writer.name
