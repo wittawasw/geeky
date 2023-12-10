@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     resources :posts
   end
+
+  mount Sidekiq::Web => "/sidekiq"
 
   # RESTful
   # - list(index), show, new, edit, create, update, delete

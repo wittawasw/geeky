@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_09_043938) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_10_072123) do
   create_table "post_tags", force: :cascade do |t|
     t.integer "tag_id", null: false
     t.integer "post_id", null: false
@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_043938) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_tags_on_post_id"
     t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
+  create_table "post_views", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_views_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -45,5 +52,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_043938) do
 
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
+  add_foreign_key "post_views", "posts"
   add_foreign_key "posts", "writers"
 end
