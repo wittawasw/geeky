@@ -19,7 +19,13 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new(title: 'untitled from controllers')
+    writer_id = Writer.pluck(:id).sample
+
+    @post = Post.new(
+      title: Faker::Movies::HarryPotter.quote,
+      body: Faker::Lorem.words(number: 7).join(' '),
+      writer_id: writer_id
+    )
   end
 
   # GET /posts/1/edit
