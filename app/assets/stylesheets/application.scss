@@ -5,3 +5,22 @@
   width: 500px;
   height: 500px;
 }
+
+.notice {
+  h3 {
+    margin-top: 0;
+  }
+
+  .time {
+    font-size: 14px;
+    color: gray;
+  }
+
+  .actions {
+    text-align: right;
+
+    a, form {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="notice">
+  <h3><%= link_to post.title, post %></h3>
+  <p><%= post.body %></p>
+  <p class="time"><%= post.created_at %></p>
+  <div class="actions">
+    <%= link_to "Edit", edit_post_path(post), class: "button" %>
+    <%= button_to "Destroy", post, method: :delete %>
+  </div>
+</div class="notice">
