@@ -1,0 +1,12 @@
+<turbo-stream action="replace" target="new_post">
+  <template>
+    <%= turbo_frame_tag 'new_post' do %>
+    <% end %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="prepend" target="posts">
+  <template>
+    <%= render 'posts/post_card', post: @post %>
+  </template>
+</turbo-stream>
