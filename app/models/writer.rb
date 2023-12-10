@@ -1,5 +1,5 @@
 class Writer < ApplicationRecord
-  searchkick searchable: [:name]
+  # searchkick searchable: [:name]
 
   has_many :posts, dependent: :destroy
 
