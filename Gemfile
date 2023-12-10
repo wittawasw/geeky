@@ -72,3 +72,12 @@ gem "sassc-rails", "~> 2.1"
 gem "kaminari", "~> 1.2"
 
 gem "faker", "~> 3.2"
+
+gem "searchkick"
+gem "elasticsearch"
+
+gem "httparty", "~> 0.21.0"
+
+gem "vcr", "~> 6.2"
+
+gem "webmock", "~> 3.19"
