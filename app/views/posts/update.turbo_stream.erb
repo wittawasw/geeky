@@ -1,0 +1,7 @@
+<turbo-stream action="replace" target="edit_post_<%= @post.id %>">
+  <template>
+    <%= turbo_frame_tag "edit_post_#{@post.id}" do %>
+      <%= render 'posts/post_card', post: @post %>
+    <% end %>
+  </template>
+</turbo-stream>

@@ -10,8 +10,9 @@
 <%= paginate @posts, views_prefix: :posts %>
 
 <div id="posts">
-
   <% @posts.each do |post| %>
-    <%= render 'posts/post_card', post: post %>
+    <%= turbo_frame_tag "edit_post_#{post.id}" do %>
+      <%= render 'posts/post_card', post: post %>
+    <% end %>
   <% end %>
 </div>
