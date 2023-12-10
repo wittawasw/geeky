@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.stackexchange.com/2.2/users?page=1&site=stackoverflow
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Cache-Control:
+      - private
+      Transfer-Encoding:
+      - chunked
+      Location:
+      - https://api.stackexchange.com/2.2/users?site=stackoverflow&page=1
+      X-Request-Guid:
+      - c66fb908-5ed1-47ea-8724-3caa309d7778
+      Set-Cookie:
+      - prov=7c8b2629-286e-4f36-b3ee-9f9cff7b3a02; expires=Tue, 10 Dec 2024 08:40:04
+        GMT; domain=.stackexchange.com; path=/; secure; samesite=none; httponly
+      Content-Security-Policy:
+      - upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
+      Date:
+      - Sun, 10 Dec 2023 08:40:04 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 10 Dec 2023 08:40:04 GMT
+- request:
+    method: get
+    uri: https://api.stackexchange.com/2.2/users?page=1&site=stackoverflow
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Cookie:
+      - prov=7c8b2629-286e-4f36-b3ee-9f9cff7b3a02
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '19612'
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=15552000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Guid:
+      - 4ca5f37c-9250-4bee-81ff-eed917deb555
+      Set-Cookie:
+      - prov=7c8b2629-286e-4f36-b3ee-9f9cff7b3a02; expires=Tue, 10 Dec 2024 08:40:05
+        GMT; domain=.stackexchange.com; path=/; secure; samesite=none; httponly
+      Content-Security-Policy:
+      - upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
+      Date:
+      - Sun, 10 Dec 2023 08:40:05 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[{"badge_counts":{"bronze":9220,"silver":9170,"gold":873},"account_id":11683,"is_employee":false,"last_modified_date":1702128900,"last_access_date":1702151901,"reputation_change_year":59210,"reputation_change_quarter":10495,"reputation_change_month":1499,"reputation_change_week":20,"reputation_change_day":20,"reputation":1437991,"creation_date":1222430705,"user_type":"registered","user_id":22656,"accept_rate":86,"location":"Reading,
+        United Kingdom","website_url":"http://csharpindepth.com","link":"https://stackoverflow.com/users/22656/jon-skeet","profile_image":"https://www.gravatar.com/avatar/6d8ebb117e8d83d74ea95fbdd0f87e13?s=256&d=identicon&r=PG","display_name":"Jon
+        Skeet"},{"badge_counts":{"bronze":5322,"silver":4482,"gold":533},"account_id":4243,"is_employee":false,"last_modified_date":1702063209,"last_access_date":1702180050,"reputation_change_year":121784,"reputation_change_quarter":28516,"reputation_change_month":3305,"reputation_change_week":153,"reputation_change_day":153,"reputation":1301538,"creation_date":1221344553,"user_type":"registered","user_id":6309,"accept_rate":100,"location":"France","website_url":"https://devstory.fyi/vonc","link":"https://stackoverflow.com/users/6309/vonc","profile_image":"https://i.stack.imgur.com/I4fiW.jpg?s=256&g=1","display_name":"VonC"},{"badge_counts":{"bronze":797,"silver":652,"gold":58},"account_id":1165580,"is_employee":false,"last_modified_date":1701690900,"last_access_date":1686955725,"reputation_change_year":26884,"reputation_change_quarter":4456,"reputation_change_month":435,"reputation_change_week":0,"reputation_change_day":0,"reputation":1248662,"creation_date":1326311637,"user_type":"registered","user_id":1144035,"location":"New
+        York, United States","website_url":"http://www.data-miners.com","link":"https://stackoverflow.com/users/1144035/gordon-linoff","profile_image":"https://www.gravatar.com/avatar/e514b017977ebf742a418cac697d8996?s=256&d=identicon&r=PG","display_name":"Gordon
+        Linoff"},{"badge_counts":{"bronze":3563,"silver":3623,"gold":374},"account_id":52822,"is_employee":false,"last_modified_date":1701957900,"last_access_date":1702130413,"reputation_change_year":25570,"reputation_change_quarter":4400,"reputation_change_month":459,"reputation_change_week":20,"reputation_change_day":20,"reputation":1088950,"creation_date":1250527322,"user_type":"registered","user_id":157882,"accept_rate":93,"location":"Willemstad,
+        Cura&#231;ao","website_url":"https://balusc.omnifaces.org","link":"https://stackoverflow.com/users/157882/balusc","profile_image":"https://www.gravatar.com/avatar/89927e2f4bde24991649b353a37678b9?s=256&d=identicon&r=PG","display_name":"BalusC"},{"badge_counts":{"bronze":3376,"silver":4104,"gold":305},"account_id":35417,"is_employee":false,"last_modified_date":1701552345,"last_access_date":1702120069,"reputation_change_year":60061,"reputation_change_quarter":11876,"reputation_change_month":1400,"reputation_change_week":40,"reputation_change_day":40,"reputation":1065451,"creation_date":1241362437,"user_type":"moderator","user_id":100297,"location":"Cambridge,
+        UK","website_url":"http://www.zopatista.com/","link":"https://stackoverflow.com/users/100297/martijn-pieters","profile_image":"https://www.gravatar.com/avatar/24780fb6df85a943c7aea0402c843737?s=256&d=identicon&r=PG","display_name":"Martijn
+        Pieters"},{"badge_counts":{"bronze":1888,"silver":1941,"gold":188},"account_id":52616,"is_employee":false,"last_modified_date":1702184422,"last_access_date":1702144691,"reputation_change_year":43262,"reputation_change_quarter":8296,"reputation_change_month":985,"reputation_change_week":45,"reputation_change_day":45,"reputation":1042816,"creation_date":1250420422,"user_type":"registered","user_id":157247,"accept_rate":91,"location":"United
+        Kingdom","website_url":"https://thenewtoys.dev","link":"https://stackoverflow.com/users/157247/t-j-crowder","profile_image":"https://i.stack.imgur.com/lUM5Z.jpg?s=256&g=1","display_name":"T.J.
+        Crowder"},{"badge_counts":{"bronze":2914,"silver":2582,"gold":267},"account_id":11975,"is_employee":false,"last_modified_date":1698688809,"last_access_date":1702193308,"reputation_change_year":31850,"reputation_change_quarter":5382,"reputation_change_month":699,"reputation_change_week":10,"reputation_change_day":10,"reputation":1033752,"creation_date":1222667162,"user_type":"registered","user_id":23354,"accept_rate":100,"location":"Forest
+        of Dean, United Kingdom","website_url":"http://blog.marcgravell.com","link":"https://stackoverflow.com/users/23354/marc-gravell","profile_image":"https://i.stack.imgur.com/CrVFH.png?s=256&g=1","display_name":"Marc
+        Gravell"},{"badge_counts":{"bronze":2934,"silver":3296,"gold":273},"account_id":14332,"is_employee":false,"last_modified_date":1700928310,"last_access_date":1702041867,"reputation_change_year":17412,"reputation_change_quarter":3044,"reputation_change_month":322,"reputation_change_week":0,"reputation_change_day":0,"reputation":1027342,"creation_date":1224432467,"user_type":"registered","user_id":29407,"accept_rate":86,"location":"Sofia,
+        Bulgaria","website_url":"http://stackoverflow.com/search?q=user%3a29407&tab=newest","link":"https://stackoverflow.com/users/29407/darin-dimitrov","profile_image":"https://www.gravatar.com/avatar/e3a181e9cdd4757a8b416d93878770c5?s=256&d=identicon&r=PG","display_name":"Darin
+        Dimitrov"},{"badge_counts":{"bronze":2516,"silver":2404,"gold":191},"account_id":39846,"is_employee":false,"last_modified_date":1701495907,"last_access_date":1702079366,"reputation_change_year":18966,"reputation_change_quarter":3574,"reputation_change_month":470,"reputation_change_week":0,"reputation_change_day":0,"reputation":991063,"creation_date":1243786808,"user_type":"registered","user_id":115145,"accept_rate":84,"location":"Pennsylvania,
+        United States","website_url":"https://commonsware.com","link":"https://stackoverflow.com/users/115145/commonsware","profile_image":"https://i.stack.imgur.com/wDnd8.png?s=256&g=1","display_name":"CommonsWare"},{"badge_counts":{"bronze":1288,"silver":1155,"gold":185},"account_id":680,"is_employee":false,"last_modified_date":1702051508,"last_access_date":1701643337,"reputation_change_year":37837,"reputation_change_quarter":6588,"reputation_change_month":854,"reputation_change_week":0,"reputation_change_day":0,"reputation":960585,"creation_date":1218356820,"user_type":"registered","user_id":893,"accept_rate":84,"location":"Christchurch,
+        New Zealand","website_url":"https://hewgill.com","link":"https://stackoverflow.com/users/893/greg-hewgill","profile_image":"https://www.gravatar.com/avatar/747ffa5da3538e66840ebc0548b8fd58?s=256&d=identicon&r=PG","display_name":"Greg
+        Hewgill"},{"badge_counts":{"bronze":2544,"silver":1708,"gold":147},"account_id":9266,"is_employee":false,"last_modified_date":1701957900,"last_access_date":1702195808,"reputation_change_year":16605,"reputation_change_quarter":3788,"reputation_change_month":442,"reputation_change_week":9,"reputation_change_day":9,"reputation":927311,"creation_date":1221698729,"user_type":"registered","user_id":17034,"location":"Madison,
+        WI","website_url":"","link":"https://stackoverflow.com/users/17034/hans-passant","profile_image":"https://i.stack.imgur.com/Cii6b.png?s=256&g=1","display_name":"Hans
+        Passant"},{"badge_counts":{"bronze":1347,"silver":1222,"gold":127},"account_id":10162,"is_employee":false,"last_modified_date":1702043417,"last_access_date":1699874624,"reputation_change_year":33720,"reputation_change_quarter":5405,"reputation_change_month":714,"reputation_change_week":0,"reputation_change_day":0,"reputation":922201,"creation_date":1221842906,"user_type":"registered","user_id":19068,"location":"United
+        Kingdom","website_url":"","link":"https://stackoverflow.com/users/19068/quentin","profile_image":"https://www.gravatar.com/avatar/1d2d3229ed1961d2bd81853242493247?s=256&d=identicon&r=PG","display_name":"Quentin"},{"badge_counts":{"bronze":664,"silver":550,"gold":37},"account_id":4601727,"is_employee":false,"last_modified_date":1698512700,"last_access_date":1698340299,"reputation_change_year":26225,"reputation_change_quarter":-7597,"reputation_change_month":530,"reputation_change_week":20,"reputation_change_day":20,"reputation":874399,"creation_date":1402536093,"user_type":"registered","user_id":3732271,"website_url":"http://linkedin.com/in/akrun1","link":"https://stackoverflow.com/users/3732271/akrun","profile_image":"https://www.gravatar.com/avatar/e015ca953dd884c1e0b13d543f0a3368?s=256&d=identicon&r=PG&f=y&so-version=2","display_name":"akrun"},{"badge_counts":{"bronze":1970,"silver":1914,"gold":177},"account_id":15988,"is_employee":false,"last_modified_date":1702126823,"last_access_date":1644608022,"reputation_change_year":18870,"reputation_change_quarter":2994,"reputation_change_month":226,"reputation_change_week":20,"reputation_change_day":20,"reputation":872818,"creation_date":1225829805,"user_type":"registered","user_id":34397,"accept_rate":87,"location":"New
+        Jersey","website_url":"https://SLaks.net","link":"https://stackoverflow.com/users/34397/slaks","profile_image":"https://www.gravatar.com/avatar/7deca8ec973c3c0875e9a36e1e3e2c44?s=256&d=identicon&r=PG","display_name":"SLaks"},{"badge_counts":{"bronze":1397,"silver":1227,"gold":173},"account_id":34048,"is_employee":false,"last_modified_date":1699449000,"last_access_date":1691098843,"reputation_change_year":26539,"reputation_change_quarter":4400,"reputation_change_month":630,"reputation_change_week":0,"reputation_change_day":0,"reputation":860793,"creation_date":1240625354,"user_type":"registered","user_id":95810,"accept_rate":80,"location":"Sunnyvale,
+        CA","website_url":"http://www.aleax.it","link":"https://stackoverflow.com/users/95810/alex-martelli","profile_image":"https://www.gravatar.com/avatar/e8d5fe90f1fe2148bf130cccd4dc311c?s=256&d=identicon&r=PG","display_name":"Alex
+        Martelli"},{"badge_counts":{"bronze":1965,"silver":1585,"gold":236},"account_id":8291,"is_employee":false,"last_modified_date":1702195802,"last_access_date":1702191238,"reputation_change_year":25588,"reputation_change_quarter":4414,"reputation_change_month":518,"reputation_change_week":0,"reputation_change_day":0,"reputation":860357,"creation_date":1221622605,"user_type":"registered","user_id":14860,"accept_rate":100,"website_url":"","link":"https://stackoverflow.com/users/14860/paxdiablo","profile_image":"https://i.stack.imgur.com/vXG1F.png?s=256&g=1","display_name":"paxdiablo"},{"badge_counts":{"bronze":1687,"silver":1799,"gold":187},"account_id":64585,"is_employee":false,"last_modified_date":1701252300,"last_access_date":1689005821,"reputation_change_year":39336,"reputation_change_quarter":5900,"reputation_change_month":546,"reputation_change_week":10,"reputation_change_day":10,"reputation":851495,"creation_date":1255610900,"user_type":"registered","user_id":190597,"accept_rate":88,"website_url":"","link":"https://stackoverflow.com/users/190597/unutbu","profile_image":"https://www.gravatar.com/avatar/8f7683207b9fcc8e77120265517f7ce9?s=256&d=identicon&r=PG&f=y&so-version=2","display_name":"unutbu"},{"badge_counts":{"bronze":1270,"silver":1361,"gold":100},"account_id":3465245,"is_employee":false,"last_modified_date":1701983401,"last_access_date":1702071402,"reputation_change_year":53088,"reputation_change_quarter":8982,"reputation_change_month":1325,"reputation_change_week":25,"reputation_change_day":25,"reputation":834662,"creation_date":1382300846,"user_type":"registered","user_id":2901002,"accept_rate":97,"location":"Bratislava,
+        Slovakia","website_url":"","link":"https://stackoverflow.com/users/2901002/jezrael","profile_image":"https://i.stack.imgur.com/hMDvl.jpg?s=256&g=1","display_name":"jezrael"},{"badge_counts":{"bronze":1454,"silver":1591,"gold":196},"account_id":24377,"is_employee":false,"last_modified_date":1697370604,"last_access_date":1701910671,"reputation_change_year":26949,"reputation_change_quarter":4642,"reputation_change_month":578,"reputation_change_week":0,"reputation_change_day":0,"reputation":817953,"creation_date":1233672960,"user_type":"registered","user_id":61974,"location":"Denmark","website_url":"","link":"https://stackoverflow.com/users/61974/mark-byers","profile_image":"https://www.gravatar.com/avatar/ad240ed5cc406759f0fd72591dc8ca47?s=256&d=identicon&r=PG","display_name":"Mark
+        Byers"},{"badge_counts":{"bronze":839,"silver":924,"gold":184},"account_id":3748,"is_employee":false,"last_modified_date":1700651103,"last_access_date":1702088056,"reputation_change_year":20966,"reputation_change_quarter":3392,"reputation_change_month":398,"reputation_change_week":0,"reputation_change_day":0,"reputation":812106,"creation_date":1220976258,"user_type":"registered","user_id":5445,"location":"Guatemala","website_url":"http://codingspot.com","link":"https://stackoverflow.com/users/5445/christian-c-salvad%c3%b3","profile_image":"https://www.gravatar.com/avatar/932fb89b9d4049cec5cba357bf0ae388?s=256&d=identicon&r=PG","display_name":"Christian
+        C. Salvad&#243;"},{"badge_counts":{"bronze":1151,"silver":1093,"gold":175},"account_id":76141,"is_employee":false,"last_modified_date":1700384100,"last_access_date":1702036997,"reputation_change_year":22830,"reputation_change_quarter":4139,"reputation_change_month":480,"reputation_change_week":0,"reputation_change_day":0,"reputation":801291,"creation_date":1259104089,"user_type":"registered","user_id":218196,"accept_rate":100,"location":"Germany","website_url":"http://felix-kling.de","link":"https://stackoverflow.com/users/218196/felix-kling","profile_image":"https://i.stack.imgur.com/4P5DY.jpg?s=256&g=1","display_name":"Felix
+        Kling"},{"badge_counts":{"bronze":1364,"silver":1347,"gold":153},"account_id":10930,"is_employee":false,"last_modified_date":1701519904,"last_access_date":1546328601,"reputation_change_year":22400,"reputation_change_quarter":3869,"reputation_change_month":481,"reputation_change_week":0,"reputation_change_day":0,"reputation":781723,"creation_date":1222135580,"user_type":"registered","user_id":20862,"accept_rate":50,"website_url":"","link":"https://stackoverflow.com/users/20862/ignacio-vazquez-abrams","profile_image":"https://www.gravatar.com/avatar/2343ae368d3241278581ce6c87f62a25?s=256&d=identicon&r=PG","display_name":"Ignacio
+        Vazquez-Abrams"},{"badge_counts":{"bronze":647,"silver":573,"gold":65},"account_id":262968,"is_employee":false,"last_modified_date":1701052504,"last_access_date":1702193986,"reputation_change_year":23577,"reputation_change_quarter":4185,"reputation_change_month":404,"reputation_change_week":10,"reputation_change_day":10,"reputation":767050,"creation_date":1292821840,"user_type":"registered","user_id":548225,"accept_rate":90,"location":"Bangalore,
+        India","website_url":"http://www.linkedin.com/in/anubhava","link":"https://stackoverflow.com/users/548225/anubhava","profile_image":"https://www.gravatar.com/avatar/dab08478b226280d4a30894c9a7ed719?s=256&d=identicon&r=PG","display_name":"anubhava"},{"badge_counts":{"bronze":657,"silver":634,"gold":105},"account_id":10375,"is_employee":false,"last_modified_date":1698081900,"last_access_date":1656491261,"reputation_change_year":35465,"reputation_change_quarter":5987,"reputation_change_month":660,"reputation_change_week":0,"reputation_change_day":0,"reputation":763465,"creation_date":1221903545,"user_type":"registered","user_id":19563,"location":"United
+        Kingdom","website_url":"","link":"https://stackoverflow.com/users/19563/cb-bailey","profile_image":"https://www.gravatar.com/avatar/a8db27c91db97757a829c7971fd62b84?s=256&d=identicon&r=PG","display_name":"CB
+        Bailey"},{"badge_counts":{"bronze":628,"silver":511,"gold":53},"account_id":1613587,"is_employee":false,"last_modified_date":1702074305,"last_access_date":1702170731,"reputation_change_year":40923,"reputation_change_quarter":6835,"reputation_change_month":1119,"reputation_change_week":30,"reputation_change_day":30,"reputation":752071,"creation_date":1340993549,"user_type":"registered","user_id":1491895,"accept_rate":69,"location":"Arlington,
+        MA","website_url":"","link":"https://stackoverflow.com/users/1491895/barmar","profile_image":"https://www.gravatar.com/avatar/82f9e178a16364bf561d0ed4da09a35d?s=256&d=identicon&r=PG","display_name":"Barmar"},{"badge_counts":{"bronze":1456,"silver":1247,"gold":149},"account_id":11948,"is_employee":false,"last_modified_date":1702119000,"last_access_date":1701716593,"reputation_change_year":18311,"reputation_change_quarter":3278,"reputation_change_month":406,"reputation_change_week":0,"reputation_change_day":0,"reputation":737668,"creation_date":1222642783,"user_type":"registered","user_id":23283,"accept_rate":100,"location":"Redmond,
+        WA","website_url":"http://blog.paranoidcoding.org/","link":"https://stackoverflow.com/users/23283/jaredpar","profile_image":"https://www.gravatar.com/avatar/529ba429a58902bef56c2fcb672d5ccb?s=256&d=identicon&r=PG","display_name":"JaredPar"},{"badge_counts":{"bronze":1463,"silver":1338,"gold":176},"account_id":7633,"is_employee":false,"last_modified_date":1701951620,"last_access_date":1702190919,"reputation_change_year":18428,"reputation_change_quarter":3554,"reputation_change_month":486,"reputation_change_week":10,"reputation_change_day":10,"reputation":737663,"creation_date":1221588555,"user_type":"registered","user_id":13302,"accept_rate":99,"location":"Bern,
+        Switzerland","website_url":"","link":"https://stackoverflow.com/users/13302/marc-s","profile_image":"https://www.gravatar.com/avatar/b4779212f57ff2e9549ea90a4499c2d7?s=256&d=identicon&r=PG","display_name":"marc_s"},{"badge_counts":{"bronze":1292,"silver":915,"gold":142},"account_id":8423,"is_employee":false,"last_modified_date":1699496705,"last_access_date":1702193060,"reputation_change_year":21011,"reputation_change_quarter":3538,"reputation_change_month":581,"reputation_change_week":45,"reputation_change_day":45,"reputation":735956,"creation_date":1221633947,"user_type":"registered","user_id":15168,"accept_rate":100,"location":"Colorado,
+        USA","website_url":"https://stackoverflow.com/users/15168","link":"https://stackoverflow.com/users/15168/jonathan-leffler","profile_image":"https://i.stack.imgur.com/WtEI9.png?s=256&g=1","display_name":"Jonathan
+        Leffler"},{"badge_counts":{"bronze":1536,"silver":1119,"gold":85},"account_id":134022,"is_employee":false,"last_modified_date":1700928310,"last_access_date":1702181112,"reputation_change_year":10319,"reputation_change_quarter":1949,"reputation_change_month":188,"reputation_change_week":0,"reputation_change_day":0,"reputation":717155,"creation_date":1273269250,"user_type":"registered","user_id":335858,"accept_rate":81,"location":"United
+        States","website_url":"http://stackoverflow.com/users/335858/dasblinkenlight","link":"https://stackoverflow.com/users/335858/sergey-kalinichenko","profile_image":"https://www.gravatar.com/avatar/4af3541c00d591e9a518b9c0b3b1190a?s=256&d=identicon&r=PG","display_name":"Sergey
+        Kalinichenko"},{"badge_counts":{"bronze":1359,"silver":1400,"gold":160},"account_id":37175,"is_employee":false,"last_modified_date":1702087800,"last_access_date":1679888914,"reputation_change_year":22476,"reputation_change_quarter":3700,"reputation_change_month":550,"reputation_change_week":10,"reputation_change_day":10,"reputation":706048,"creation_date":1242214829,"user_type":"registered","user_id":106224,"accept_rate":96,"location":"Singapore","website_url":"https://NOVALISTIC.com","link":"https://stackoverflow.com/users/106224/boltclock","profile_image":"https://www.gravatar.com/avatar/a2d818d801ce38a33807f68fdd92043a?s=256&d=identicon&r=PG","display_name":"BoltClock"}],"has_more":true,"quota_max":300,"quota_remaining":288}'
+  recorded_at: Sun, 10 Dec 2023 08:40:06 GMT
+recorded_with: VCR 6.2.0
