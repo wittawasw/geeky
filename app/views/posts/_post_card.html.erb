@@ -1,10 +1,9 @@
 <div class="notice">
-  <h3><%= I18n.t("post.title")  %></h3>
-  <h3><%= link_to post.title, post %></h3>
+  <h3><%= link_to post.title, post, data: {turbo_frame: "_top"} %></h3>
   <p><%= post.body %></p>
   <p class="time"><%= post.created_at %></p>
   <div class="actions">
     <%= link_to "Edit", edit_post_path(post), class: "button", data: {turbo_frame: "edit_post_#{post.id}"} %>
     <%= button_to "Destroy", post, method: :delete, data: {turbo_confirm: "Are you sure?"} %>
   </div>
-</div class="notice">
+</div>
