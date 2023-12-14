@@ -13,9 +13,8 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-      <%= turbo_frame_tag "edit_post_#{post.id}" do %>
-        <%= render 'posts/post_card', post: post %>
-      <% end %>
+    <%= turbo_frame_tag "edit_post_#{post.id}" do %>
+      <%= render 'posts/post_card', post: post %>
     <% end %>
   <% end %>
 </div>
